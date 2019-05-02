@@ -1,0 +1,45 @@
+# This will help you to setup the Vagrant on windows enviroment 
+Required software: 1) Oracle Virtual Box 2) Vagrant 3) ssh client (cmder or GitBash) cmder recommended.
+1) Install Virtual box : https://www.virtualbox.org/wiki/Downloads
+2) Vagrant Install : https://www.vagrantup.com/ Select the oppropriate OS (you may requre reboot the system after installation)
+3) cmder install its .zip file : https://cmder.net/ 
+# INSTALL ALL ABOVE SOFTWARE
+########################################################################################3
+Open your cmder
+checke the vagrant version : vagrant -v 
+#HOW WE CAN USE VAGRANT 
+Go to the vagrantup.com > then click on find boxex you will see no of machine/os like centos/debion/ubuntu
+here we are using UBUNTU
+################################################################################################3
+Click ubuntu/trusty64
+click on new tab and you will see below command ie 
+  1) vagrant init ubuntu/trusty64
+  2 ) create a folder where you want to create a box on your system
+  Example:  c:users/program/vagrant
+  3) Go to the cmder and the path you crated on your system: c:/users/program/vagrant
+1) vagrant box add ubuntu/trusty64  : enter it will take some time to add the box
+2) Next step is to initialize the box (cheked the box is succesfully added)
+3) vagrant init ubuntu/trusty64  (execute this command) > you will see vagrant file will Generate you can see this file generated on the folder you craete on your local system
+4) vagrant up (to start the vagrant)
+> vagrant ssh to connect to the ubuntu machine.
+> DONE YOUR ENVIROMENT IS SET UP
+#################################################################################################################
+IN CASE VAGRANT SSH CAME UP WITH NO OUTPUT THEN FOLLOW-THE BELOW STEPS.
+>vagrant ssh (failed)
+> vagrant ssh-config
+Host default 
+      HostName 127.0.0.1
+      user vagrant
+      port 2222
+      UserknownhostsFile /dev/null
+      strictHostkeychecking no
+      PasswordAunthentication no
+      IdentityFile /c/Users/Programmingknowledge..../default/virtualbox/private_key
+      
+> ssh vagrant@127.0.0.1 -p 2222 -i /c/Users/Programmingknowledge..../default/virtualbox/private_key  (enter)
+> you will connect to the virtual machine
+> open the oracle virtual box you will see the Ubuntu is running on your virtual box
+> now you can install test develop on this machine and you can share the vagrant file to anyone.
+
+
+
